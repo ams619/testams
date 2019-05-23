@@ -1,0 +1,11 @@
+﻿/databases/admin/folder.jointesting/jointesting.vql
+/databases/admin/folder.baseviews/baseviews.vql
+/databases/admin/folder.d01e02 - joins/d01e02 - joins.vql
+/databases/admin/folder.d01e02 - joins/folder.1. data sources/1. data sources.vql
+/databases/admin/folder.d01e02 - joins/folder.1. data sources/datasources/jdbc/ds_human_resources.vql
+/databases/admin/folder.baseviews/views/bv_hr_regions.vql
+/databases/admin/folder.baseviews/views/bv_hr_departments.vql
+/databases/admin/folder.baseviews/views/bv_hr_employees.vql
+/databases/admin/folder.baseviews/views/dv_employees_department_manager_testing.vql
+/databases/admin/folder.baseviews/views/bv_hr_locations.vql
+/databases/admin/folder.baseviews/views/bv_hr_countries.vql

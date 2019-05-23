@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_employees_department_manager_testing FOLDER = '/baseviews' AS SELECT bv_hr_employees.employee_id AS employee_id, bv_hr_employees1.first_name AS employee_first_name, bv_hr_employees1.last_name AS employee_last_name, bv_hr_employees1.email AS employee_email, bv_hr_departments.department_id AS department_id, bv_hr_departments.department_name AS department_name, bv_hr_employees1.manager_id AS manager_id, bv_hr_employees.first_name AS manager_first_name, bv_hr_employees.last_name AS manager_last_name, bv_hr_employees.email AS manager_email FROM bv_hr_departments AS bv_hr_departments INNER JOIN (bv_hr_employees AS bv_hr_employees INNER JOIN bv_hr_employees AS bv_hr_employees1 ON bv_hr_employees.employee_id = bv_hr_employees1.manager_id ) ON bv_hr_departments.department_id = bv_hr_employees1.department_id ;
+
+ALTER VIEW dv_employees_department_manager_testing
+ LAYOUT (bv_hr_departments = [930, 140, 200, 106], bv_hr_employees = [20, 20, 200, 225], bv_hr_employees = [575, 127, 200, 225]);
+
