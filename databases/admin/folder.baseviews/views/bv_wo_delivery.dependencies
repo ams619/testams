@@ -1,0 +1,3 @@
+﻿/databases/admin/folder.baseviews/baseviews.vql
+/databases/admin/folder.datasources/datasources.vql
+/databases/admin/folder.datasources/datasources/jdbc/ds_web_orders.vql
