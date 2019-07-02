@@ -1,0 +1,28 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_emptab_copy
+    DATASOURCENAME=ora001
+    SCHEMANAME='${databases.admin.views.jdbc.bv_emptab_copy.SCHEMANAME}' 
+    RELATIONNAME='EMPTAB' 
+    OUTPUTSCHEMA (
+        emp_id = 'EMP_ID' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypeid='3', sourcetypename='NUMBER')  NOT NULL SORTABLE,
+        hire_date = 'HIRE_DATE' :'java.time.LocalDateTime' (OPT) (sourcetyperadix='10', sourcetypesize='7', sourcetypeid='93', sourcetypename='DATE')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_emptab_copy I18N au_cst (
+        emp_id:decimal (sourcetyperadix = '10', sourcetypeid = '3'), 
+        hire_date:timestamp (sourcetyperadix = '10', sourcetypesize = '7', sourcetypeid = '93')
+    )
+    CACHE FULL
+    BATCHSIZEINCACHE DEFAULT
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_emptab(
+        I18N au_cst
+        CONSTRAINTS (
+             ADD emp_id (any) OPT ANY
+             ADD hire_date (any) OPT ANY
+        )
+        OUTPUTLIST (emp_id, hire_date
+        )
+        WRAPPER (jdbc bv_emptab_copy)
+    );
+
